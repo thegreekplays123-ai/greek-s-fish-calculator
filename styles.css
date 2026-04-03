@@ -1,18 +1,36 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+
+    /* Background image + overlay */
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("bg.png"); /* <-- change this path */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     color: #fff;
     text-align: center;
-    padding: 40px;
+
+    /* Center everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    margin: 0;
 }
 
 .container {
-    background: rgba(0,0,0,0.4);
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.5);
+    padding: 35px;              /* bigger padding */
+    border-radius: 15px;
+
+    max-width: 500px;          /* bigger calculator */
+    width: 100%;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
 }
 
 h1 {
@@ -25,8 +43,8 @@ label {
 }
 
 input {
-    width: 90%;
-    padding: 8px;
+    width: 95%;
+    padding: 10px;             /* slightly bigger inputs */
     margin-top: 5px;
     border-radius: 6px;
     border: none;
@@ -35,13 +53,14 @@ input {
 
 button {
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 25px;        /* bigger button */
     background: #00c6ff;
     border: none;
     border-radius: 8px;
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
