@@ -1,6 +1,7 @@
 function calculate() {
     let rarity = parseFloat(document.getElementById("rarity").value);
     let luck = parseFloat(document.getElementById("luck").value) || 0;
+    let boostedFish = parseFloat(document.getElementById("boostedFish").value) || 0;
     let seconds = parseFloat(document.getElementById("seconds").value);
 
     if (!rarity || !seconds) {
@@ -11,8 +12,8 @@ function calculate() {
     // Convert rarity to probability
     let baseChance = 1 / rarity;
 
-    // Apply luck boost
-    let boostedChance = baseChance * (1 + (luck / 100));
+    // Apply BOTH boosts
+    let boostedChance = baseChance * (1 + (luck / 100)) * (1 + (boostedFish / 100));
 
     // Cap at 100%
     if (boostedChance > 1) boostedChance = 1;
