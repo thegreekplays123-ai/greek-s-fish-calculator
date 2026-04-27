@@ -13,7 +13,7 @@ function calculate() {
     let baseChance = 1 / rarity;
 
     // Apply BOTH boosts
-    let boostedChance = baseChance * (1 + (luck / 100)) * (1 + (boostedFish / 100));
+    let boostedChance = baseChance * (1 + ((luck + boostedFish) / 100));
 
     // Cap at 100%
     if (boostedChance > 1) boostedChance = 1;
